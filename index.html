@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Can You Afford Forever?</title>
-    <link rel="stylesheet" href="calculate.css">
-    </head>
-<body> 
-    <div class="container"> 
-<h1 class="main-title" id="mainTitle"> Check Your Wallet Before Your Heart! </h1>
-<div class="calculator-box" id="calculatorBox">
-<h2>  Gold  Information : </h2>
-<div class="input-group">
-<input type="number" id="goldPrice" placeholder="Gold Price Per Gram (SYP)"> </div>
-<div class="input-group">
-<input type="number" id="grams" placeholder="Number of Grams"> </div>
-<div class="input-group">
-<select id="city">
-    <option value="" disabled selected>Please Select a City</option>
-    <option value="1">Hama</option>
-    <option value="1.05">Damascus</option>
-    <option value="1.03">Aleppo</option>
-    <option value="0.98">Homs</option>
-    <option value="1.02">Latakia</option>
-</select> 
-</div>
-<h2>  Mahr Details :</h2>
-<div class="input-group">
-<input type="number" id="advance" placeholder="Advance Payment (SYP)"> </div>
-<div class="input-group">
-<input type="number" id="delayed" placeholder="Delayed Payment (SYP)"> </div>
-<h2> Dollar Exchange :</h2>
-<div class="input-group">
-<input type="number" id="dollarRate" placeholder="USD to SYP Rate"> </div>
-<button id="calculateBtn">Calculate</button>
-<div id="errorMessage" class="errorMessage"></div>
-</div> <!--calculator-box-->
-<div id="result" class="result-box"></div>
-
+    <title>Make</title>
+    <link rel="stylesheet" href="styles.css">  
+</head>
+<body>
+<div class="container">
+<div class="img">
+<div class="img-box">
+<img id="img">
+</div> <!--img-box-->
+<div class="upload">
+<label for="upload">Upload</label>
+<input type="file" id="upload">
+</div> <!--upload-->
+</div> <!--img-->
+<div class="filters">
+    <ul>
+        <li>
+            <label for="saturate">Saturate</label>
+            <input type="range" id="saturate" min="0" max="200" value="100">
+        </li>
+         <li>
+            <label for="contrast">Contrast</label>
+            <input type="range" id="contrast" min="0" max="200" value="100">
+        </li>
+         <li>
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+        </li>
+         <li>
+            <label for="sepia">Sepia</label>
+            <input type="range" id="sepia" min="0" max="200" value="100">
+        </li>
+        <li>
+            <label for="grayscale">Grayscale</label>
+            <input type="range" id="grayscale" step="0.1" min="0" max="1" value="100">
+        </li>
+        <li>
+            <label for="blur">Blur</label>
+            <input type="range" id="blur" step="0.1" min="0" max="10" value="0">
+        </li>
+    <li>
+            <label for="hue-rotate">Hue Rotate</label>
+            <input type="range" id="hue-rotate"  min="0" max="350" value="0">
+        </li>
+        <li>
+        <a download="image" id="download">Download</a>
+        <span onclick="resetValue()">Reset</span>
+        </li>
+    </ul>
+</div> <!--filters-->
 </div> <!--container-->
-<script src="calculate.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
