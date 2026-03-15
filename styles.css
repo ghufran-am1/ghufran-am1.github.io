@@ -1,177 +1,79 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
 }
-body{
-    background: #222;
-    color: #FFF;
-    font-family: system-ui;
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#08001f,#30197d);
+    color: #fff;
+    position: relative;
 }
-.crud{
-    width: 80%;
-    margin: auto;
+.cont{
+    width: 800px;
+    height: 180px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
-.head{
+.clock{
+   width: 100%;
+   height: 100%;
+   background: rgba(235,0,255,0.11); 
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   backdrop-filter: blur(40px);
+}
+.cont::before{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #f41b75;
+    border-radius: 5px;
+    position: absolute;
+    left:-50px;
+    top:-50px;
+    z-index: -1;
+}
+.cont::after{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #419aff;
+    border-radius: 50%;
+    position: absolute;
+    right:-50px;
+    bottom:-50px;
+    z-index: -1;
+}
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
     text-align: center;
-    margin: 10px 0px;
+    position: relative;
 }
-input{
-    width: 100%;
-    height: 30px;
-    outline: none;
-    border: none;
-    background: #111;
-    margin: 4px 0;
-    border-radius: 4px;
-    padding: 4px;
-    color: #FFF;
+.clock span::after{
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left:50%;
+    transform: translate(-50%);
 }
-input:focus{
-    background: #000;
-    transform: scale(1.1);
+#hrs::after{
+content:'HOURS';
 }
-.price input{
-    width: 20%;
+#min::after{
+content:'MINS';
 }
-#total{
-    background: #a00d02;
-    padding: 5px 2px;
-    border-radius: 4px;
-}
-#total::before{
-    content: 'Total:';
-}
-button{
-    width: 100%;
-    height: 30px;
-    border: none;
-    cursor: pointer;
-    background: #390053;
-    color: #FFF;
-    border-radius: 20px;
-    transition: 0.5s;
-}
-button:hover{
-background: #51025f;
-letter-spacing: 1px;
-}
-.btnSearch{
-display: flex;
-justify-content: space-between;
-}
-.btnSearch button{
-    width: 45%;
-}
-table{
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-}
-table th{
-    text-transform: uppercase;
-}
-th,td{
-    padding: 5px;
-}
-#deleteAll{
-margin:20px 0;
-}
-@media (max-width: 768px) {
-    .crud {
-        width: 95%;
-    }
-    
-    .price input {
-        width: 100%;
-        margin: 2px 0;
-    }
-    
-    .price {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .btnSearch {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .btnSearch button {
-        width: 100%;
-    }
-    
-    table {
-        font-size: 12px;
-        overflow-x: auto;
-        display: block;
-    }
-    
-    th, td {
-        padding: 5px 2px;
-    }
-    
-    th {
-        font-size: 10px;
-    }
-    
-    #total {
-        display: inline-block;
-        margin-top: 5px;
-    }
-    
-    input:focus {
-        transform: scale(1.02);
-    }
-    
-    button:hover {
-        letter-spacing: 0px;
-    }
+#sec::after{
+content:'SEC';
 }
 
-@media (max-width: 480px) {
-    .crud {
-        width: 98%;
-    }
-    
-    .head h2 {
-        font-size: 20px;
-    }
-    
-    .head p {
-        font-size: 14px;
-    }
-    
-    table {
-        font-size: 10px;
-    }
-    
-    th, td {
-        padding: 3px 1px;
-    }
-    
-    button {
-        font-size: 12px;
-        height: 25px;
-    }
-    
-    #deleteAll {
-        margin: 10px 0;
-    }
-}
 
-/* للشاشات الصغيرة جداً */
-@media (max-width: 320px) {
-    table {
-        font-size: 8px;
-    }
-    
-    th, td {
-        padding: 2px 0;
-    }
-    
-    button {
-        font-size: 10px;
-        height: 22px;
-    }
-}
+
